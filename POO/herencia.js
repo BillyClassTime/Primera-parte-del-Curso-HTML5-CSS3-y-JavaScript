@@ -22,7 +22,8 @@ function Plant(name) {
 }
 Plant.prototype = new PlantPrototype();
 
-//Ahora solo necesitamos una clase que herede de ambos. La herencia se realiza mediante call ing la función del constructor (sin usar la nueva palabra clave) para los prototipos y los constructores de objetos. 
+//Ahora solo necesitamos una clase que herede de ambos. La herencia se realiza mediante calling 
+//la función del constructor (sin usar la nueva palabra clave) para los prototipos y los constructores de objetos. 
 //Primero, el prototipo tiene que heredar de los prototipos originales.
 
 function FoodPlantPrototype() {
@@ -34,7 +35,7 @@ function FoodPlantPrototype() {
     };
 }
 
-Y el constructor tiene que heredar de los constructores padres:
+//Y el constructor tiene que heredar de los constructores padres:
 function FoodPlant(name, maturity) {
     Food.call(this, name);
     Plant.call(this, name);
@@ -44,7 +45,7 @@ function FoodPlant(name, maturity) {
 
 FoodPlant.prototype = new FoodPlantPrototype();
 
-Ahora puedes cultivar, comer y cosechar diferentes instancias:
+//Ahora puedes cultivar, comer y cosechar diferentes instancias:
 var fp1 = new FoodPlant('Radish', 28);
 var fp2 = new FoodPlant('Corn', 90);
 
